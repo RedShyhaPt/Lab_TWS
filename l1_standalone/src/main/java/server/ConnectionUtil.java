@@ -7,17 +7,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ConnectionUtil {
-    private static final String JDBC_URL = "jdbc:sqlserver://DESKTOP-5AEIHSO:1433;databaseName=Gazizulin_sales;integratedSecurity=true;encrypt=false; trustServerCertificate=true";
-    private static final String JDBC_USER = "ifmo-ws";
-    private static final String JDBC_PASSWORD = "ifmo-ws";
-
-    static {
-        try {
-            Class.forName("org.postgresql.Driver");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+    private static final String JDBC_URL = "jdbc:sqlserver://DESKTOP-5AEIHSO;database=Gazizulin_sales";
+    private static final String JDBC_USER = "ws-ifmo";
+    private static final String JDBC_PASSWORD = "wsifmo";
 
     public static Connection getConnection() {
         Connection connection = null;
