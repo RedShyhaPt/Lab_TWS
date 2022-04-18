@@ -27,48 +27,6 @@ public interface ClientWebService {
 
     /**
      * 
-     * @param name
-     * @return
-     *     returns java.util.List<client.client_generated.Clients>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getClientsByName", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByName")
-    @ResponseWrapper(localName = "getClientsByNameResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByNameResponse")
-    @Action(input = "http://server/ClientWebService/getClientsByNameRequest", output = "http://server/ClientWebService/getClientsByNameResponse")
-    public List<Clients> getClientsByName(
-        @WebParam(name = "name", targetNamespace = "")
-        String name);
-
-    /**
-     * 
-     * @param city
-     * @return
-     *     returns java.util.List<client.client_generated.Clients>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getClientsByCity", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByCity")
-    @ResponseWrapper(localName = "getClientsByCityResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByCityResponse")
-    @Action(input = "http://server/ClientWebService/getClientsByCityRequest", output = "http://server/ClientWebService/getClientsByCityResponse")
-    public List<Clients> getClientsByCity(
-        @WebParam(name = "city", targetNamespace = "")
-        String city);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<client.client_generated.Clients>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getAllClients", targetNamespace = "http://server/", className = "client.client_generated.GetAllClients")
-    @ResponseWrapper(localName = "getAllClientsResponse", targetNamespace = "http://server/", className = "client.client_generated.GetAllClientsResponse")
-    @Action(input = "http://server/ClientWebService/getAllClientsRequest", output = "http://server/ClientWebService/getAllClientsResponse")
-    public List<Clients> getAllClients();
-
-    /**
-     * 
      * @param country
      * @param sex
      * @return
@@ -120,6 +78,21 @@ public interface ClientWebService {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "echoBinaryAsString", targetNamespace = "http://server/", className = "client.client_generated.EchoBinaryAsString")
+    @ResponseWrapper(localName = "echoBinaryAsStringResponse", targetNamespace = "http://server/", className = "client.client_generated.EchoBinaryAsStringResponse")
+    @Action(input = "http://server/ClientWebService/echoBinaryAsStringRequest", output = "http://server/ClientWebService/echoBinaryAsStringResponse")
+    public String echoBinaryAsString(
+        @WebParam(name = "arg0", targetNamespace = "")
+        byte[] arg0);
+
+    /**
+     * 
      * @param country
      * @param city
      * @param contact
@@ -150,6 +123,18 @@ public interface ClientWebService {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<client.client_generated.Clients>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getAllClients", targetNamespace = "http://server/", className = "client.client_generated.GetAllClients")
+    @ResponseWrapper(localName = "getAllClientsResponse", targetNamespace = "http://server/", className = "client.client_generated.GetAllClientsResponse")
+    @Action(input = "http://server/ClientWebService/getAllClientsRequest", output = "http://server/ClientWebService/getAllClientsResponse")
+    public List<Clients> getAllClients();
+
+    /**
+     * 
      * @param id
      * @return
      *     returns java.lang.String
@@ -160,6 +145,33 @@ public interface ClientWebService {
     @ResponseWrapper(localName = "deleteClientResponse", targetNamespace = "http://server/", className = "client.client_generated.DeleteClientResponse")
     @Action(input = "http://server/ClientWebService/deleteClientRequest", output = "http://server/ClientWebService/deleteClientResponse")
     public String deleteClient(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "getBinary", targetNamespace = "http://server/", className = "client.client_generated.GetBinary")
+    @ResponseWrapper(localName = "getBinaryResponse", targetNamespace = "http://server/", className = "client.client_generated.GetBinaryResponse")
+    @Action(input = "http://server/ClientWebService/getBinaryRequest", output = "http://server/ClientWebService/getBinaryResponse")
+    public void getBinary(
+        @WebParam(name = "arg0", targetNamespace = "")
+        byte[] arg0);
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns java.util.List<client.client_generated.Clients>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getClientsById", targetNamespace = "http://server/", className = "client.client_generated.GetClientsById")
+    @ResponseWrapper(localName = "getClientsByIdResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByIdResponse")
+    @Action(input = "http://server/ClientWebService/getClientsByIdRequest", output = "http://server/ClientWebService/getClientsByIdResponse")
+    public List<Clients> getClientsById(
         @WebParam(name = "id", targetNamespace = "")
         int id);
 
@@ -195,17 +207,32 @@ public interface ClientWebService {
 
     /**
      * 
-     * @param id
+     * @param city
      * @return
      *     returns java.util.List<client.client_generated.Clients>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getClientsById", targetNamespace = "http://server/", className = "client.client_generated.GetClientsById")
-    @ResponseWrapper(localName = "getClientsByIdResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByIdResponse")
-    @Action(input = "http://server/ClientWebService/getClientsByIdRequest", output = "http://server/ClientWebService/getClientsByIdResponse")
-    public List<Clients> getClientsById(
-        @WebParam(name = "id", targetNamespace = "")
-        int id);
+    @RequestWrapper(localName = "getClientsByCity", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByCity")
+    @ResponseWrapper(localName = "getClientsByCityResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByCityResponse")
+    @Action(input = "http://server/ClientWebService/getClientsByCityRequest", output = "http://server/ClientWebService/getClientsByCityResponse")
+    public List<Clients> getClientsByCity(
+        @WebParam(name = "city", targetNamespace = "")
+        String city);
+
+    /**
+     * 
+     * @param name
+     * @return
+     *     returns java.util.List<client.client_generated.Clients>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getClientsByName", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByName")
+    @ResponseWrapper(localName = "getClientsByNameResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByNameResponse")
+    @Action(input = "http://server/ClientWebService/getClientsByNameRequest", output = "http://server/ClientWebService/getClientsByNameResponse")
+    public List<Clients> getClientsByName(
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
 
 }
