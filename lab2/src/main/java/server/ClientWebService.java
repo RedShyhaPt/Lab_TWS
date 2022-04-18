@@ -1,14 +1,33 @@
 package server;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import javax.xml.ws.soap.MTOM;
 
+
+@MTOM
 @WebService(serviceName = "ClientService")
 public class ClientWebService {
     public ClientWebService() {}
+
+    // question lab2
+    @WebMethod
+    public void getBinary(byte[] b) {
+        try {
+            System.out.write(b);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @WebMethod
+    public String echoBinaryAsString(byte[] bytes) {
+        return new String(bytes);
+    }
 
     @WebMethod(operationName = "getAllClients")
     public List<Clients> getAllClients() {

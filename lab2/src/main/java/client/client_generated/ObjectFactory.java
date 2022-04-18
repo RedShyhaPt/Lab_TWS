@@ -24,11 +24,13 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _GetBinaryResponse_QNAME = new QName("http://server/", "getBinaryResponse");
     private final static QName _GetAllClients_QNAME = new QName("http://server/", "getAllClients");
     private final static QName _CreateNewClient_QNAME = new QName("http://server/", "createNewClient");
     private final static QName _DeleteClient_QNAME = new QName("http://server/", "deleteClient");
     private final static QName _GetClientsByContact_QNAME = new QName("http://server/", "getClientsByContact");
     private final static QName _UpdateClient_QNAME = new QName("http://server/", "updateClient");
+    private final static QName _EchoBinaryAsString_QNAME = new QName("http://server/", "echoBinaryAsString");
     private final static QName _UpdateClientResponse_QNAME = new QName("http://server/", "updateClientResponse");
     private final static QName _DeleteClientResponse_QNAME = new QName("http://server/", "deleteClientResponse");
     private final static QName _GetClientsByCountryAndSex_QNAME = new QName("http://server/", "getClientsByCountryAndSex");
@@ -36,14 +38,17 @@ public class ObjectFactory {
     private final static QName _GetClientsByCityResponse_QNAME = new QName("http://server/", "getClientsByCityResponse");
     private final static QName _GetAllClientsResponse_QNAME = new QName("http://server/", "getAllClientsResponse");
     private final static QName _GetClientsByCity_QNAME = new QName("http://server/", "getClientsByCity");
+    private final static QName _GetBinary_QNAME = new QName("http://server/", "getBinary");
     private final static QName _GetClientsByName_QNAME = new QName("http://server/", "getClientsByName");
     private final static QName _GetClientsById_QNAME = new QName("http://server/", "getClientsById");
+    private final static QName _EchoBinaryAsStringResponse_QNAME = new QName("http://server/", "echoBinaryAsStringResponse");
     private final static QName _GetClientsByIdResponse_QNAME = new QName("http://server/", "getClientsByIdResponse");
     private final static QName _GetClientsByNameAndCityResponse_QNAME = new QName("http://server/", "getClientsByNameAndCityResponse");
     private final static QName _GetClientsByContactResponse_QNAME = new QName("http://server/", "getClientsByContactResponse");
     private final static QName _GetClientsByCountryAndSexResponse_QNAME = new QName("http://server/", "getClientsByCountryAndSexResponse");
     private final static QName _GetClientsByNameAndCity_QNAME = new QName("http://server/", "getClientsByNameAndCity");
     private final static QName _CreateNewClientResponse_QNAME = new QName("http://server/", "createNewClientResponse");
+    private final static QName _EchoBinaryAsStringArg0_QNAME = new QName("", "arg0");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: client.client_generated
@@ -58,6 +63,14 @@ public class ObjectFactory {
      */
     public DeleteClientResponse createDeleteClientResponse() {
         return new DeleteClientResponse();
+    }
+
+    /**
+     * Create an instance of {@link EchoBinaryAsString }
+     * 
+     */
+    public EchoBinaryAsString createEchoBinaryAsString() {
+        return new EchoBinaryAsString();
     }
 
     /**
@@ -109,6 +122,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetBinaryResponse }
+     * 
+     */
+    public GetBinaryResponse createGetBinaryResponse() {
+        return new GetBinaryResponse();
+    }
+
+    /**
      * Create an instance of {@link GetClientsByNameAndCity }
      * 
      */
@@ -149,11 +170,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link EchoBinaryAsStringResponse }
+     * 
+     */
+    public EchoBinaryAsStringResponse createEchoBinaryAsStringResponse() {
+        return new EchoBinaryAsStringResponse();
+    }
+
+    /**
      * Create an instance of {@link GetClientsByIdResponse }
      * 
      */
     public GetClientsByIdResponse createGetClientsByIdResponse() {
         return new GetClientsByIdResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetBinary }
+     * 
+     */
+    public GetBinary createGetBinary() {
+        return new GetBinary();
     }
 
     /**
@@ -221,6 +258,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetBinaryResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server/", name = "getBinaryResponse")
+    public JAXBElement<GetBinaryResponse> createGetBinaryResponse(GetBinaryResponse value) {
+        return new JAXBElement<GetBinaryResponse>(_GetBinaryResponse_QNAME, GetBinaryResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetAllClients }{@code >}}
      * 
      */
@@ -263,6 +309,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://server/", name = "updateClient")
     public JAXBElement<UpdateClient> createUpdateClient(UpdateClient value) {
         return new JAXBElement<UpdateClient>(_UpdateClient_QNAME, UpdateClient.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link EchoBinaryAsString }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server/", name = "echoBinaryAsString")
+    public JAXBElement<EchoBinaryAsString> createEchoBinaryAsString(EchoBinaryAsString value) {
+        return new JAXBElement<EchoBinaryAsString>(_EchoBinaryAsString_QNAME, EchoBinaryAsString.class, null, value);
     }
 
     /**
@@ -329,6 +384,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetBinary }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server/", name = "getBinary")
+    public JAXBElement<GetBinary> createGetBinary(GetBinary value) {
+        return new JAXBElement<GetBinary>(_GetBinary_QNAME, GetBinary.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetClientsByName }{@code >}}
      * 
      */
@@ -344,6 +408,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://server/", name = "getClientsById")
     public JAXBElement<GetClientsById> createGetClientsById(GetClientsById value) {
         return new JAXBElement<GetClientsById>(_GetClientsById_QNAME, GetClientsById.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link EchoBinaryAsStringResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server/", name = "echoBinaryAsStringResponse")
+    public JAXBElement<EchoBinaryAsStringResponse> createEchoBinaryAsStringResponse(EchoBinaryAsStringResponse value) {
+        return new JAXBElement<EchoBinaryAsStringResponse>(_EchoBinaryAsStringResponse_QNAME, EchoBinaryAsStringResponse.class, null, value);
     }
 
     /**
@@ -398,6 +471,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://server/", name = "createNewClientResponse")
     public JAXBElement<CreateNewClientResponse> createCreateNewClientResponse(CreateNewClientResponse value) {
         return new JAXBElement<CreateNewClientResponse>(_CreateNewClientResponse_QNAME, CreateNewClientResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "arg0", scope = EchoBinaryAsString.class)
+    public JAXBElement<byte[]> createEchoBinaryAsStringArg0(byte[] value) {
+        return new JAXBElement<byte[]>(_EchoBinaryAsStringArg0_QNAME, byte[].class, EchoBinaryAsString.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "arg0", scope = GetBinary.class)
+    public JAXBElement<byte[]> createGetBinaryArg0(byte[] value) {
+        return new JAXBElement<byte[]>(_EchoBinaryAsStringArg0_QNAME, byte[].class, GetBinary.class, ((byte[]) value));
     }
 
 }
