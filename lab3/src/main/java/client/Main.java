@@ -4,6 +4,7 @@ import client.client_generated.ClientService;
 import client.client_generated.ClientServiceFault;
 import client.client_generated.Clients;
 import client.client_generated.IllegalArgumentException;
+import server.error.ThrottlingException;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -17,20 +18,31 @@ public class Main {
         ClientService clientService = new ClientService(url);
         List<Clients> clients;
         chekedClients(clientService);
+        int countOfExecution = 1;
 
         try {
             System.out.println("    Create client   ");
-            clients = clientService.getClientWebServicePort().createNewClient(16, "", "Казань",
-                    "Россия", "Нет", "Male");
+            clients = clientService.getClientWebServicePort().createNewClient(17, "sdf", "Казань", "Россия", "Нет", "Male", countOfExecution);
             print(clients);
             chekedClients(clientService);
             System.out.println();
+            countOfExecution +=1;
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
 
-        /*
         try {
+            System.out.println("    Create client   ");
+            clients = clientService.getClientWebServicePort().createNewClient(18, "sdf", "Казань", "Россия", "Нет", "Male", countOfExecution);
+            print(clients);
+            chekedClients(clientService);
+            System.out.println();
+            countOfExecution +=1;
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+
+        /*try {
             System.out.println("    Update client   ");
             String clientUpdate = clientService.getClientWebServicePort().updateClient(14, "Вячеслав", "Новгород", "Россия",
                     "slaven@mail.com", "Male");
@@ -41,15 +53,15 @@ public class Main {
             System.out.println("Error: " + e.getMessage());
         }
 
+
         try {
             System.out.println("    Delete client   ");
-            String deleting = clientService.getClientWebServicePort().deleteClient(14);
+            String deleting = clientService.getClientWebServicePort().deleteClient(16);
             System.out.println(deleting);
             chekedClients(clientService);
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
-
         try {
             System.out.println("    Clients by country & sex   ");
             clients = clientService.getClientWebServicePort().getClientsByCountryAndSex("Россия", "Male");
@@ -57,8 +69,9 @@ public class Main {
             System.out.println();
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
-        }
-        */
+        }*/
+
+
     }
 
     public static void print (List<Clients> clients){

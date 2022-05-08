@@ -2,6 +2,8 @@ package server;
 
 import server.error.ClientServiceFault;
 import server.error.IllegalArgumentException;
+import server.error.ThrottlingException;
+import server.error.ThrottlingFault;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -75,7 +77,8 @@ public class ClientWebService {
                                       @WebParam(name = "city") String city,
                                       @WebParam(name = "country") String country,
                                       @WebParam(name = "contact") String contact,
-                                      @WebParam(name = "sex") String sex) throws IllegalArgumentException {
+                                      @WebParam(name = "sex") String sex,
+                                      @WebParam(name = "count") int count) throws IllegalArgumentException, ThrottlingException {
 
         if ((id < 0) || (id == 0)) {
             ClientServiceFault fault = new ClientServiceFault();
@@ -95,6 +98,11 @@ public class ClientWebService {
         if (contact == null || contact.equals("")) {
             ClientServiceFault fault = new ClientServiceFault();
             throw new IllegalArgumentException("Please enter argument contact!",fault);
+        }
+
+        if (count > 1) {
+            ThrottlingFault fault = new ThrottlingFault();
+            throw new ThrottlingException("Not allowed create client more then 1 time for 1 query!",fault);
         }
 
         DAO dao = new DAO();

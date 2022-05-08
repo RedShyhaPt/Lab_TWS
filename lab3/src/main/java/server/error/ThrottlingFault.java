@@ -1,7 +1,8 @@
 package server.error;
 
 public class ThrottlingFault {
-    private static final String DEFAULT_MESSAGE = "It cannot be null or empty";
+    private static final String DEFAULT_MESSAGE = "Not allowed to execute more\n"
+        + "than 1 time for this request";
     protected String message;
 
     public String getMessage() {

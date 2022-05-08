@@ -22,6 +22,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="country" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="contact" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="sex" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="count" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,7 +38,8 @@ import javax.xml.bind.annotation.XmlType;
     "city",
     "country",
     "contact",
-    "sex"
+    "sex",
+    "count"
 })
 public class CreateNewClient {
 
@@ -47,6 +49,7 @@ public class CreateNewClient {
     protected String country;
     protected String contact;
     protected String sex;
+    protected int count;
 
     /**
      * Gets the value of the id property.
@@ -182,6 +185,22 @@ public class CreateNewClient {
      */
     public void setSex(String value) {
         this.sex = value;
+    }
+
+    /**
+     * Gets the value of the count property.
+     * 
+     */
+    public int getCount() {
+        return count;
+    }
+
+    /**
+     * Sets the value of the count property.
+     * 
+     */
+    public void setCount(int value) {
+        this.count = value;
     }
 
 }
