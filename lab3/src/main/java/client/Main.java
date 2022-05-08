@@ -1,10 +1,8 @@
 package client;
 
-import client.client_generated.ClientService;
-import client.client_generated.ClientServiceFault;
-import client.client_generated.Clients;
+import client.client_generated.*;
+import client.client_generated.ThrottlingException;
 import client.client_generated.IllegalArgumentException;
-import server.error.ThrottlingException;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -22,24 +20,24 @@ public class Main {
 
         try {
             System.out.println("    Create client   ");
-            clients = clientService.getClientWebServicePort().createNewClient(17, "sdf", "Казань", "Россия", "Нет", "Male", countOfExecution);
+            clients = clientService.getClientWebServicePort().createNewClient(21, "", "Казань", "Россия", "Нет", "Male", countOfExecution);
             print(clients);
             chekedClients(clientService);
             System.out.println();
             countOfExecution +=1;
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | ThrottlingException e) {
             System.out.println("Error: " + e.getMessage());
         }
 
         try {
             System.out.println("    Create client   ");
-            clients = clientService.getClientWebServicePort().createNewClient(18, "sdf", "Казань", "Россия", "Нет", "Male", countOfExecution);
+            clients = clientService.getClientWebServicePort().createNewClient(22, "sdf", "Казань", "Россия", "Нет", "Male", 2);
             print(clients);
             chekedClients(clientService);
             System.out.println();
             countOfExecution +=1;
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
+        } catch (IllegalArgumentException | ThrottlingException e) {
+            System.out.println("Error: " + e.getMessage());
         }
 
         /*try {
@@ -70,8 +68,6 @@ public class Main {
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }*/
-
-
     }
 
     public static void print (List<Clients> clients){

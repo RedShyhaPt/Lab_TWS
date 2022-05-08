@@ -37,6 +37,7 @@ public class ObjectFactory {
     private final static QName _GetClientsByCityResponse_QNAME = new QName("http://server/", "getClientsByCityResponse");
     private final static QName _GetAllClientsResponse_QNAME = new QName("http://server/", "getAllClientsResponse");
     private final static QName _GetClientsByCity_QNAME = new QName("http://server/", "getClientsByCity");
+    private final static QName _ThrottlingException_QNAME = new QName("http://server/", "ThrottlingException");
     private final static QName _GetClientsByName_QNAME = new QName("http://server/", "getClientsByName");
     private final static QName _GetClientsById_QNAME = new QName("http://server/", "getClientsById");
     private final static QName _GetClientsByIdResponse_QNAME = new QName("http://server/", "getClientsByIdResponse");
@@ -155,6 +156,14 @@ public class ObjectFactory {
      */
     public GetClientsByIdResponse createGetClientsByIdResponse() {
         return new GetClientsByIdResponse();
+    }
+
+    /**
+     * Create an instance of {@link ThrottlingFault }
+     * 
+     */
+    public ThrottlingFault createThrottlingFault() {
+        return new ThrottlingFault();
     }
 
     /**
@@ -344,6 +353,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://server/", name = "getClientsByCity")
     public JAXBElement<GetClientsByCity> createGetClientsByCity(GetClientsByCity value) {
         return new JAXBElement<GetClientsByCity>(_GetClientsByCity_QNAME, GetClientsByCity.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ThrottlingFault }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server/", name = "ThrottlingException")
+    public JAXBElement<ThrottlingFault> createThrottlingException(ThrottlingFault value) {
+        return new JAXBElement<ThrottlingFault>(_ThrottlingException_QNAME, ThrottlingFault.class, null, value);
     }
 
     /**

@@ -28,62 +28,6 @@ public interface ClientWebService {
 
     /**
      * 
-     * @param contact
-     * @return
-     *     returns java.util.List<client.client_generated.Clients>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getClientsByContact", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByContact")
-    @ResponseWrapper(localName = "getClientsByContactResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByContactResponse")
-    @Action(input = "http://server/ClientWebService/getClientsByContactRequest", output = "http://server/ClientWebService/getClientsByContactResponse")
-    public List<Clients> getClientsByContact(
-        @WebParam(name = "contact", targetNamespace = "")
-        String contact);
-
-    /**
-     * 
-     * @param city
-     * @param name
-     * @return
-     *     returns java.util.List<client.client_generated.Clients>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getClientsByNameAndCity", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByNameAndCity")
-    @ResponseWrapper(localName = "getClientsByNameAndCityResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByNameAndCityResponse")
-    @Action(input = "http://server/ClientWebService/getClientsByNameAndCityRequest", output = "http://server/ClientWebService/getClientsByNameAndCityResponse")
-    public List<Clients> getClientsByNameAndCity(
-        @WebParam(name = "name", targetNamespace = "")
-        String name,
-        @WebParam(name = "city", targetNamespace = "")
-        String city);
-
-    /**
-     * 
-     * @param country
-     * @param sex
-     * @return
-     *     returns java.util.List<client.client_generated.Clients>
-     * @throws IllegalArgumentException
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getClientsByCountryAndSex", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByCountryAndSex")
-    @ResponseWrapper(localName = "getClientsByCountryAndSexResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByCountryAndSexResponse")
-    @Action(input = "http://server/ClientWebService/getClientsByCountryAndSexRequest", output = "http://server/ClientWebService/getClientsByCountryAndSexResponse", fault = {
-        @FaultAction(className = IllegalArgumentException.class, value = "http://server/ClientWebService/getClientsByCountryAndSex/Fault/IllegalArgumentException")
-    })
-    public List<Clients> getClientsByCountryAndSex(
-        @WebParam(name = "country", targetNamespace = "")
-        String country,
-        @WebParam(name = "sex", targetNamespace = "")
-        String sex)
-        throws IllegalArgumentException
-    ;
-
-    /**
-     * 
      * @return
      *     returns java.util.List<client.client_generated.Clients>
      */
@@ -93,6 +37,41 @@ public interface ClientWebService {
     @ResponseWrapper(localName = "getAllClientsResponse", targetNamespace = "http://server/", className = "client.client_generated.GetAllClientsResponse")
     @Action(input = "http://server/ClientWebService/getAllClientsRequest", output = "http://server/ClientWebService/getAllClientsResponse")
     public List<Clients> getAllClients();
+
+    /**
+     * 
+     * @param city
+     * @return
+     *     returns java.util.List<client.client_generated.Clients>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getClientsByCity", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByCity")
+    @ResponseWrapper(localName = "getClientsByCityResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByCityResponse")
+    @Action(input = "http://server/ClientWebService/getClientsByCityRequest", output = "http://server/ClientWebService/getClientsByCityResponse")
+    public List<Clients> getClientsByCity(
+        @WebParam(name = "city", targetNamespace = "")
+        String city);
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns java.lang.String
+     * @throws IllegalArgumentException
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteClient", targetNamespace = "http://server/", className = "client.client_generated.DeleteClient")
+    @ResponseWrapper(localName = "deleteClientResponse", targetNamespace = "http://server/", className = "client.client_generated.DeleteClientResponse")
+    @Action(input = "http://server/ClientWebService/deleteClientRequest", output = "http://server/ClientWebService/deleteClientResponse", fault = {
+        @FaultAction(className = IllegalArgumentException.class, value = "http://server/ClientWebService/deleteClient/Fault/IllegalArgumentException")
+    })
+    public String deleteClient(
+        @WebParam(name = "id", targetNamespace = "")
+        int id)
+        throws IllegalArgumentException
+    ;
 
     /**
      * 
@@ -131,23 +110,18 @@ public interface ClientWebService {
 
     /**
      * 
-     * @param id
+     * @param name
      * @return
-     *     returns java.lang.String
-     * @throws IllegalArgumentException
+     *     returns java.util.List<client.client_generated.Clients>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deleteClient", targetNamespace = "http://server/", className = "client.client_generated.DeleteClient")
-    @ResponseWrapper(localName = "deleteClientResponse", targetNamespace = "http://server/", className = "client.client_generated.DeleteClientResponse")
-    @Action(input = "http://server/ClientWebService/deleteClientRequest", output = "http://server/ClientWebService/deleteClientResponse", fault = {
-        @FaultAction(className = IllegalArgumentException.class, value = "http://server/ClientWebService/deleteClient/Fault/IllegalArgumentException")
-    })
-    public String deleteClient(
-        @WebParam(name = "id", targetNamespace = "")
-        int id)
-        throws IllegalArgumentException
-    ;
+    @RequestWrapper(localName = "getClientsByName", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByName")
+    @ResponseWrapper(localName = "getClientsByNameResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByNameResponse")
+    @Action(input = "http://server/ClientWebService/getClientsByNameRequest", output = "http://server/ClientWebService/getClientsByNameResponse")
+    public List<Clients> getClientsByName(
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
 
     /**
      * 
@@ -160,6 +134,7 @@ public interface ClientWebService {
      * @param id
      * @return
      *     returns java.util.List<client.client_generated.Clients>
+     * @throws ThrottlingException
      * @throws IllegalArgumentException
      */
     @WebMethod
@@ -167,7 +142,8 @@ public interface ClientWebService {
     @RequestWrapper(localName = "createNewClient", targetNamespace = "http://server/", className = "client.client_generated.CreateNewClient")
     @ResponseWrapper(localName = "createNewClientResponse", targetNamespace = "http://server/", className = "client.client_generated.CreateNewClientResponse")
     @Action(input = "http://server/ClientWebService/createNewClientRequest", output = "http://server/ClientWebService/createNewClientResponse", fault = {
-        @FaultAction(className = IllegalArgumentException.class, value = "http://server/ClientWebService/createNewClient/Fault/IllegalArgumentException")
+        @FaultAction(className = IllegalArgumentException.class, value = "http://server/ClientWebService/createNewClient/Fault/IllegalArgumentException"),
+        @FaultAction(className = ThrottlingException.class, value = "http://server/ClientWebService/createNewClient/Fault/ThrottlingException")
     })
     public List<Clients> createNewClient(
         @WebParam(name = "id", targetNamespace = "")
@@ -184,38 +160,8 @@ public interface ClientWebService {
         String sex,
         @WebParam(name = "count", targetNamespace = "")
         int count)
-        throws IllegalArgumentException
+        throws IllegalArgumentException, ThrottlingException
     ;
-
-    /**
-     * 
-     * @param name
-     * @return
-     *     returns java.util.List<client.client_generated.Clients>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getClientsByName", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByName")
-    @ResponseWrapper(localName = "getClientsByNameResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByNameResponse")
-    @Action(input = "http://server/ClientWebService/getClientsByNameRequest", output = "http://server/ClientWebService/getClientsByNameResponse")
-    public List<Clients> getClientsByName(
-        @WebParam(name = "name", targetNamespace = "")
-        String name);
-
-    /**
-     * 
-     * @param city
-     * @return
-     *     returns java.util.List<client.client_generated.Clients>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getClientsByCity", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByCity")
-    @ResponseWrapper(localName = "getClientsByCityResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByCityResponse")
-    @Action(input = "http://server/ClientWebService/getClientsByCityRequest", output = "http://server/ClientWebService/getClientsByCityResponse")
-    public List<Clients> getClientsByCity(
-        @WebParam(name = "city", targetNamespace = "")
-        String city);
 
     /**
      * 
@@ -231,5 +177,61 @@ public interface ClientWebService {
     public List<Clients> getClientsById(
         @WebParam(name = "id", targetNamespace = "")
         int id);
+
+    /**
+     * 
+     * @param country
+     * @param sex
+     * @return
+     *     returns java.util.List<client.client_generated.Clients>
+     * @throws IllegalArgumentException
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getClientsByCountryAndSex", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByCountryAndSex")
+    @ResponseWrapper(localName = "getClientsByCountryAndSexResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByCountryAndSexResponse")
+    @Action(input = "http://server/ClientWebService/getClientsByCountryAndSexRequest", output = "http://server/ClientWebService/getClientsByCountryAndSexResponse", fault = {
+        @FaultAction(className = IllegalArgumentException.class, value = "http://server/ClientWebService/getClientsByCountryAndSex/Fault/IllegalArgumentException")
+    })
+    public List<Clients> getClientsByCountryAndSex(
+        @WebParam(name = "country", targetNamespace = "")
+        String country,
+        @WebParam(name = "sex", targetNamespace = "")
+        String sex)
+        throws IllegalArgumentException
+    ;
+
+    /**
+     * 
+     * @param contact
+     * @return
+     *     returns java.util.List<client.client_generated.Clients>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getClientsByContact", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByContact")
+    @ResponseWrapper(localName = "getClientsByContactResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByContactResponse")
+    @Action(input = "http://server/ClientWebService/getClientsByContactRequest", output = "http://server/ClientWebService/getClientsByContactResponse")
+    public List<Clients> getClientsByContact(
+        @WebParam(name = "contact", targetNamespace = "")
+        String contact);
+
+    /**
+     * 
+     * @param city
+     * @param name
+     * @return
+     *     returns java.util.List<client.client_generated.Clients>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getClientsByNameAndCity", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByNameAndCity")
+    @ResponseWrapper(localName = "getClientsByNameAndCityResponse", targetNamespace = "http://server/", className = "client.client_generated.GetClientsByNameAndCityResponse")
+    @Action(input = "http://server/ClientWebService/getClientsByNameAndCityRequest", output = "http://server/ClientWebService/getClientsByNameAndCityResponse")
+    public List<Clients> getClientsByNameAndCity(
+        @WebParam(name = "name", targetNamespace = "")
+        String name,
+        @WebParam(name = "city", targetNamespace = "")
+        String city);
 
 }
