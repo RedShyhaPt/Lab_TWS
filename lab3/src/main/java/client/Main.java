@@ -6,7 +6,7 @@ import client.client_generated.IllegalArgumentException;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.List;
+import java.util.*;
 
 
 public class Main {
@@ -18,32 +18,37 @@ public class Main {
         chekedClients(clientService);
         int countOfExecution = 1;
 
-        try {
+        /*try {
             System.out.println("    Create client   ");
-            clients = clientService.getClientWebServicePort().createNewClient(21, "", "Казань", "Россия", "Нет", "Male", countOfExecution);
+            clients = clientService.getClientWebServicePort().createNewClient(
+                    21, "rt", "Казань",
+                    "Россия",
+                    "Нет",
+                    "Male", countOfExecution,
+                    basicAuth());
             print(clients);
             chekedClients(clientService);
             System.out.println();
             countOfExecution +=1;
         } catch (IllegalArgumentException | ThrottlingException e) {
             System.out.println("Error: " + e.getMessage());
-        }
+        }*/
 
-        try {
+        /*try {
             System.out.println("    Create client   ");
-            clients = clientService.getClientWebServicePort().createNewClient(22, "sdf", "Казань", "Россия", "Нет", "Male", 2);
+            clients = clientService.getClientWebServicePort().createNewClient(23, "sdf", "Казань", "Россия", "Нет", "Male", 2);
             print(clients);
             chekedClients(clientService);
             System.out.println();
             countOfExecution +=1;
         } catch (IllegalArgumentException | ThrottlingException e) {
             System.out.println("Error: " + e.getMessage());
-        }
+        }*/
 
         /*try {
             System.out.println("    Update client   ");
             String clientUpdate = clientService.getClientWebServicePort().updateClient(14, "Вячеслав", "Новгород", "Россия",
-                    "slaven@mail.com", "Male");
+                    "slaven@mail.com", "Male",basicAuth());
             System.out.println(clientUpdate);
             chekedClients(clientService);
             System.out.println();
@@ -51,15 +56,6 @@ public class Main {
             System.out.println("Error: " + e.getMessage());
         }
 
-
-        try {
-            System.out.println("    Delete client   ");
-            String deleting = clientService.getClientWebServicePort().deleteClient(16);
-            System.out.println(deleting);
-            chekedClients(clientService);
-        } catch (IllegalArgumentException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
         try {
             System.out.println("    Clients by country & sex   ");
             clients = clientService.getClientWebServicePort().getClientsByCountryAndSex("Россия", "Male");
@@ -68,6 +64,18 @@ public class Main {
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }*/
+
+        try {
+            System.out.println("    Delete client   ");
+            String deleting = clientService.getClientWebServicePort().deleteClient(
+                    20,basicAuth());
+            System.out.println("Authorize success!");
+            System.out.println(deleting);
+            chekedClients(clientService);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
     }
 
     public static void print (List<Clients> clients){
@@ -83,5 +91,11 @@ public class Main {
         List<Clients> clients = clientService.getClientWebServicePort().getAllClients();
         print(clients);
         System.out.println();
+    }
+
+    public static String basicAuth() {
+        String login = "wsifmo";
+        String password = "wsifmo";
+        return new String(Base64.getEncoder().encode(new String(login + ":" + password).getBytes()));
     }
 }

@@ -4,12 +4,19 @@ import server.error.ClientServiceFault;
 import server.error.IllegalArgumentException;
 import server.error.ThrottlingException;
 import server.error.ThrottlingFault;
+import sun.misc.BASE64Decoder;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Resource;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import javax.xml.ws.WebServiceContext;
+import javax.xml.ws.handler.MessageContext;
 
 @WebService(serviceName = "ClientService")
 public class ClientWebService {
@@ -78,7 +85,12 @@ public class ClientWebService {
                                       @WebParam(name = "country") String country,
                                       @WebParam(name = "contact") String contact,
                                       @WebParam(name = "sex") String sex,
-                                      @WebParam(name = "count") int count) throws IllegalArgumentException, ThrottlingException {
+                                      @WebParam(name = "count") int count,
+                                      @WebParam(name = "auth") String auth) throws IllegalArgumentException, ThrottlingException {
+        if (!isAuthenticated(auth)) {
+            ClientServiceFault fault = new ClientServiceFault();
+            throw new IllegalArgumentException("Invalid login or password!",fault);
+        }
 
         if ((id < 0) || (id == 0)) {
             ClientServiceFault fault = new ClientServiceFault();
@@ -115,8 +127,14 @@ public class ClientWebService {
                                @WebParam(name = "city") String city,
                                @WebParam(name = "country") String country,
                                @WebParam(name = "contact") String contact,
-                               @WebParam(name = "sex") String sex) throws IllegalArgumentException{
+                               @WebParam(name = "sex") String sex,
+                               @WebParam(name = "auth") String auth) throws IllegalArgumentException{
         Clients client = new Clients(id, name, city, country, contact, sex);
+
+        if (!isAuthenticated(auth)) {
+            ClientServiceFault fault = new ClientServiceFault();
+            throw new IllegalArgumentException("Invalid login or password!",fault);
+        }
 
         if (getClientsById(id).isEmpty()){
             ClientServiceFault fault = new ClientServiceFault();
@@ -142,7 +160,13 @@ public class ClientWebService {
     }
 
     @WebMethod(operationName = "deleteClient")
-    public String deleteClient(@WebParam(name = "id") int id) throws IllegalArgumentException {
+    public String deleteClient(@WebParam(name = "id") int id,
+                               @WebParam(name = "auth") String auth) throws IllegalArgumentException {
+        if (!isAuthenticated(auth)) {
+            ClientServiceFault fault = new ClientServiceFault();
+            throw new IllegalArgumentException("Invalid login or password!",fault);
+        }
+
         if ((id < 0) || (id == 0)) {
             ClientServiceFault fault = new ClientServiceFault();
             throw new IllegalArgumentException("Empty or negative id isn't allowed!",fault);
@@ -150,5 +174,24 @@ public class ClientWebService {
 
         DAO dao = new DAO();
         return dao.deleteClient(id);
+    }
+
+    private boolean isAuthenticated(String auth) {
+        String decode = "";
+        byte[] bytes = null;
+        try {
+            bytes = new BASE64Decoder().decodeBuffer(auth);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        assert bytes != null;
+        decode = new String(bytes);
+        System.out.println(decode);
+
+        String [] details = decode.split(":");
+        String login = details[0];
+        String password = details[1];
+        return Objects.equals(login, "admin") && Objects.equals(password, "admin");
     }
 }
