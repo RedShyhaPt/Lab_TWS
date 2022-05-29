@@ -6,10 +6,17 @@ import com.sun.jersey.api.client.GenericType;
 import com.sun.jersey.api.client.WebResource;
 import server.Clients;
 import server.error.InvalidClientArgumentException;
+import sun.misc.BASE64Decoder;
+import sun.security.krb5.Credentials;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
-import javax.ws.rs.QueryParam;
+import java.util.Objects;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Request;
+import javax.ws.rs.core.Response;
 
 
 public class Main {
@@ -18,16 +25,16 @@ public class Main {
     private static final String URL1 = "http://localhost:8080/rest/clients/byName";
     private static final String URL2 = "http://localhost:8080/rest/clients/byCity";
 
-    public static void main(String[] args) throws InvalidClientArgumentException {
+    public static void main(String[] args) throws InvalidClientArgumentException, IOException {
 
         Client client = Client.create();
         // выводим всех клиентов
         printList(getAllClients(client));
         // создаём нового клиента
-        printList(createNewClient(client, 14, "Азат","", "Россия", "Нет", "Male"));
+        printList(createNewClient(client, 14, "Азат","Москва", "", "df", "Male", basicAuth()));
         // обновляем клиента
-        //System.out.println(updateClient(client, 14, "Азат","Санкт-Петербург", "Россия", "azat@mail.ru", "Male"));
-        //System.out.println(deleteClient(client,14));
+        System.out.println(updateClient(client, 19, "Азт","Петербург", "Россия", "azt@mail.ru", "Male", basicAuth()));
+        //System.out.println(deleteClient(client,19,basicAuth()));
         // проверяем изменеия
         printList(getAllClients(client));
     }
@@ -51,7 +58,8 @@ public class Main {
                                                  String city,
                                                  String country,
                                                  String contact,
-                                                 String sex) throws InvalidClientArgumentException {
+                                                 String sex,
+                                                 String auth) throws InvalidClientArgumentException {
         WebResource webResource = client.resource(URL);
         if (name != null) {
             webResource = webResource.queryParam("name",name);
@@ -60,6 +68,7 @@ public class Main {
             webResource = webResource.queryParam("country",country);
             webResource = webResource.queryParam("contact",contact);
             webResource = webResource.queryParam("sex",sex);
+            webResource = webResource.queryParam("auth",auth);
         }
         ClientResponse response =
                 webResource.accept(MediaType.APPLICATION_JSON).post(ClientResponse.class);
@@ -77,7 +86,8 @@ public class Main {
                                                  String city,
                                                  String country,
                                                  String contact,
-                                                 String sex) throws InvalidClientArgumentException {
+                                                 String sex,
+                                                 String auth) throws InvalidClientArgumentException {
         WebResource webResource = client.resource(URL);
         if (name != null) {
             webResource = webResource.queryParam("name",name);
@@ -86,6 +96,7 @@ public class Main {
             webResource = webResource.queryParam("country",country);
             webResource = webResource.queryParam("contact",contact);
             webResource = webResource.queryParam("sex",sex);
+            webResource = webResource.queryParam("auth",auth);
         }
         ClientResponse response =
                 webResource.accept(MediaType.APPLICATION_JSON).put(ClientResponse.class);
@@ -99,10 +110,11 @@ public class Main {
         return response.getEntity(type);
     }
 
-    private static String deleteClient(Client client, int id) throws InvalidClientArgumentException {
+    private static String deleteClient(Client client, int id, String auth) throws InvalidClientArgumentException {
         WebResource webResource = client.resource(URL);
-        if (id != 0 || id>0) {
+        if (id != 0) {
             webResource = webResource.queryParam("id", String.valueOf(id));
+            webResource = webResource.queryParam("auth",auth);
         }
         ClientResponse response =
                 webResource.accept(MediaType.APPLICATION_JSON).delete(ClientResponse.class);
@@ -110,6 +122,7 @@ public class Main {
                 ClientResponse.Status.OK.getStatusCode()) {
             throw new InvalidClientArgumentException("Empty Argument!");
         }
+        else System.out.println("Ok");
         GenericType<String> type = new GenericType<String>()
         {};
         return response.getEntity(type);
@@ -155,5 +168,11 @@ public class Main {
         }
         System.out.println();
         System.out.println();
+    }
+
+    public static String basicAuth() {
+        String login = "admn";
+        String password = "admin";
+        return new String(Base64.getEncoder().encode(new String(login + ":" + password).getBytes()));
     }
 }
