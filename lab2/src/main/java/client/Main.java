@@ -12,42 +12,44 @@ import java.net.URL;
 import java.util.List;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.logging.Logger;
 
 public class Main {
     public static void main(String[] args) throws IOException, MalformedURLException {
         URL url = new URL("http://localhost:8080/ClientService?wsdl");
         //URL url = new URL("http://desktop-5aeihso:8080/l1_j2ee-17839880486531206586.0-SNAPSHOT/ClientService?wsdl");
-
+        ClientWebService cwb = new ClientWebService();
         ClientService clientService = new ClientService(url);
         // answer to lab2
         MTOMFeature feature=new MTOMFeature();
         try {
-            File file = new File("C:/3223.txt");
+            File file = new File("C:/Снимок экрана (735).png");
             FileInputStream fis = new FileInputStream(file);
             byte[] b = new byte[1024*10];
             fis.read(b,0,b.length);
             clientService.getClientWebServicePort(feature).getBinary(b);
+            cwb.getBinary(b);
         } catch (FileNotFoundException ex) {
             System.out.println("Error: " + ex.getMessage());
         }
 
         List<Clients> clients;
         chekedClients(clientService);
-/*
+
         System.out.println("    Create client   ");
-        clients = clientService.getClientWebServicePort().createNewClient(14,"Рустам", "Казань",
-                "Россия", "Нет", "Male");
+        clients = clientService.getClientWebServicePort().createNewClient(15,"Smith", "Нью-Йорк",
+                "США", "Нет", "Male");
         chekedClients(clientService);
         System.out.println();
-
+/*
         System.out.println("    Update client   ");
-        String clientUpdate = clientService.getClientWebServicePort().updateClient(14,"Вячеслав", "Новгород", "Россия",
+        String clientUpdate = clientService.getClientWebServicePort().updateClient(16,"Вячеслав", "Новгород", "Россия",
                 "slaven@mail.com", "Male");
         System.out.println(clientUpdate);
         chekedClients(clientService);
         System.out.println();
 
-        /*System.out.println("    Delete client   ");
+        System.out.println("    Delete client   ");
         String deleting = clientService.getClientWebServicePort().deleteClient(14);
         System.out.println(deleting);
         chekedClients(clientService);*/

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2343d938-93f2-444c-abcb-e9a85bee16be" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Lab_TWS.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_j2ee/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/l1_j2ee/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/l1_standalone/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/ClientService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/ClientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/ClientWebService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/ClientWebService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/Clients.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/Clients.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetAllClients.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetAllClients.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetAllClientsResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetAllClientsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByCity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByCity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByCityResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByCityResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByContact.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByContact.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByContactResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByContactResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByCountryAndSex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByCountryAndSex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByCountryAndSexResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByCountryAndSexResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsById.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsById.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByIdResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByIdResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByNameAndCity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByNameAndCity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByNameAndCityResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByNameAndCityResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByNameResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/GetClientsByNameResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/ObjectFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/ObjectFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/package-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l1_standalone/src/main/java/client/client_generated/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/l4_standalone/src/main/java/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/l4_standalone/src/main/java/client/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/l4_standalone/target/classes/client/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/l4_standalone/target/classes/client/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/src/main/java/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/main/java/client/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/target/classes/client/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/target/classes/client/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/src/main/java/client/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/ClientService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/ClientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/ClientServiceFault.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/ClientServiceFault.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/ClientWebService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/ClientWebService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/Clients.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/Clients.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/CreateNewClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/CreateNewClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/CreateNewClientResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/CreateNewClientResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/DeleteClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/DeleteClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/DeleteClientResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/DeleteClientResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetAllClients.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetAllClients.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetAllClientsResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetAllClientsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByCity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByCity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByCityResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByCityResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByContact.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByContact.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByContactResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByContactResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByCountryAndSex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByCountryAndSex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByCountryAndSexResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByCountryAndSexResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsById.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsById.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByIdResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByIdResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByNameAndCity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByNameAndCity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByNameAndCityResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByNameAndCityResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByNameResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/GetClientsByNameResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/IllegalArgumentException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/IllegalArgumentException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/ObjectFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/ObjectFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/UpdateClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/UpdateClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/UpdateClientResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/UpdateClientResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/package-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/client/client_generated/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/src/main/java/server/error/ThrottlingFault.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/src/main/java/server/error/ThrottlingFault.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/target/classes/client/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/target/classes/client/Main.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="28rvoLU1ANs21WoTCOhQNbvKjYL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2343d938-93f2-444c-abcb-e9a85bee16be" name="Changes" comment="" />
+      <created>1651987698487</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1651987698487</updated>
+    </task>
+    <servers />
+  </component>
+</project>

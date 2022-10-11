@@ -62,18 +62,6 @@ public class Browser {
         return inquiry.findBusiness(fb);
     }
 
-    private ServiceList getServiceList(String token, String serviceName) throws Exception {
-        FindService findService = new FindService();
-        findService.setAuthInfo(token);
-        FindQualifiers qualifiers = new FindQualifiers();
-        qualifiers.getFindQualifier().add(UDDIConstants.APPROXIMATE_MATCH);
-        findService.setFindQualifiers(qualifiers);
-        Name searchName = new Name();
-        searchName.setValue(serviceName);
-        findService.getName().add(searchName);
-        return inquiry.findService(findService);
-    }
-
     /**
      * Converts category bags of models to a readable string
      */
@@ -105,7 +93,6 @@ public class Browser {
                 System.getProperty("line.separator");
     }
 
-
     private void PrintServiceDetail(BusinessService get) {
         if (get == null) {
             return;
@@ -120,6 +107,18 @@ public class Browser {
             System.out.println("Item is not digitally signed");
         }
         PrintBindingTemplates(get.getBindingTemplates());
+    }
+
+    private ServiceList getServiceList(String token, String serviceName) throws Exception {
+        FindService findService = new FindService();
+        findService.setAuthInfo(token);
+        FindQualifiers qualifiers = new FindQualifiers();
+        qualifiers.getFindQualifier().add(UDDIConstants.APPROXIMATE_MATCH);
+        findService.setFindQualifiers(qualifiers);
+        Name searchName = new Name();
+        searchName.setValue(serviceName);
+        findService.getName().add(searchName);
+        return inquiry.findService(findService);
     }
 
     /**

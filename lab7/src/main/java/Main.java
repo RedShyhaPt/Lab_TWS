@@ -2,7 +2,7 @@ import juddi.Browser;
 import juddi.Publisher;
 
 import java.util.Scanner;
-// set JAVA_OPTS=-Djavax.xml.accessExternalDTD=all
+// set JAVA_OPTS=
 public class Main {
     private static final String URL = "http://localhost:8084/ClientService?wsdl";
 

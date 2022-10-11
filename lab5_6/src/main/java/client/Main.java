@@ -59,7 +59,7 @@ public class Main {
                                                  String country,
                                                  String contact,
                                                  String sex,
-                                                 String auth) throws InvalidClientArgumentException {
+                                                 String auth) {
         WebResource webResource = client.resource(URL);
         if (name != null) {
             webResource = webResource.queryParam("name",name);
@@ -74,11 +74,14 @@ public class Main {
                 webResource.accept(MediaType.APPLICATION_JSON).post(ClientResponse.class);
         if (response.getStatus() !=
                 ClientResponse.Status.OK.getStatusCode()) {
-            throw new InvalidClientArgumentException("Empty Argument!");
+            String serverErrorMsg = response.getEntity(String.class);
+            System.out.println(serverErrorMsg);
+            return null;
+        } else {
+            GenericType<List<Clients>> type = new GenericType<List<Clients>>() {
+            };
+            return response.getEntity(type);
         }
-        GenericType<List<Clients>> type = new GenericType<List<Clients>>()
-        {};
-        return response.getEntity(type);
     }
 
     private static String updateClient(Client client, int id,

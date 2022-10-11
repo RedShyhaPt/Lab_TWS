@@ -25,12 +25,19 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _GetAllClients_QNAME = new QName("http://server/", "getAllClients");
+    private final static QName _CreateNewClient_QNAME = new QName("http://server/", "createNewClient");
+    private final static QName _DeleteClient_QNAME = new QName("http://server/", "deleteClient");
     private final static QName _GetClientsByContact_QNAME = new QName("http://server/", "getClientsByContact");
+    private final static QName _UpdateClient_QNAME = new QName("http://server/", "updateClient");
+    private final static QName _UpdateClientResponse_QNAME = new QName("http://server/", "updateClientResponse");
+    private final static QName _DeleteClientResponse_QNAME = new QName("http://server/", "deleteClientResponse");
+    private final static QName _IllegalArgumentException_QNAME = new QName("http://server/", "IllegalArgumentException");
     private final static QName _GetClientsByCountryAndSex_QNAME = new QName("http://server/", "getClientsByCountryAndSex");
     private final static QName _GetClientsByNameResponse_QNAME = new QName("http://server/", "getClientsByNameResponse");
     private final static QName _GetClientsByCityResponse_QNAME = new QName("http://server/", "getClientsByCityResponse");
     private final static QName _GetAllClientsResponse_QNAME = new QName("http://server/", "getAllClientsResponse");
     private final static QName _GetClientsByCity_QNAME = new QName("http://server/", "getClientsByCity");
+    private final static QName _ThrottlingException_QNAME = new QName("http://server/", "ThrottlingException");
     private final static QName _GetClientsByName_QNAME = new QName("http://server/", "getClientsByName");
     private final static QName _GetClientsById_QNAME = new QName("http://server/", "getClientsById");
     private final static QName _GetClientsByIdResponse_QNAME = new QName("http://server/", "getClientsByIdResponse");
@@ -38,6 +45,7 @@ public class ObjectFactory {
     private final static QName _GetClientsByContactResponse_QNAME = new QName("http://server/", "getClientsByContactResponse");
     private final static QName _GetClientsByCountryAndSexResponse_QNAME = new QName("http://server/", "getClientsByCountryAndSexResponse");
     private final static QName _GetClientsByNameAndCity_QNAME = new QName("http://server/", "getClientsByNameAndCity");
+    private final static QName _CreateNewClientResponse_QNAME = new QName("http://server/", "createNewClientResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: client.client_generated
@@ -47,11 +55,51 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link DeleteClientResponse }
+     * 
+     */
+    public DeleteClientResponse createDeleteClientResponse() {
+        return new DeleteClientResponse();
+    }
+
+    /**
+     * Create an instance of {@link UpdateClientResponse }
+     * 
+     */
+    public UpdateClientResponse createUpdateClientResponse() {
+        return new UpdateClientResponse();
+    }
+
+    /**
+     * Create an instance of {@link DeleteClient }
+     * 
+     */
+    public DeleteClient createDeleteClient() {
+        return new DeleteClient();
+    }
+
+    /**
      * Create an instance of {@link GetClientsByContact }
      * 
      */
     public GetClientsByContact createGetClientsByContact() {
         return new GetClientsByContact();
+    }
+
+    /**
+     * Create an instance of {@link UpdateClient }
+     * 
+     */
+    public UpdateClient createUpdateClient() {
+        return new UpdateClient();
+    }
+
+    /**
+     * Create an instance of {@link CreateNewClient }
+     * 
+     */
+    public CreateNewClient createCreateNewClient() {
+        return new CreateNewClient();
     }
 
     /**
@@ -68,6 +116,14 @@ public class ObjectFactory {
      */
     public GetClientsByNameAndCity createGetClientsByNameAndCity() {
         return new GetClientsByNameAndCity();
+    }
+
+    /**
+     * Create an instance of {@link CreateNewClientResponse }
+     * 
+     */
+    public CreateNewClientResponse createCreateNewClientResponse() {
+        return new CreateNewClientResponse();
     }
 
     /**
@@ -100,6 +156,14 @@ public class ObjectFactory {
      */
     public GetClientsByIdResponse createGetClientsByIdResponse() {
         return new GetClientsByIdResponse();
+    }
+
+    /**
+     * Create an instance of {@link ThrottlingFault }
+     * 
+     */
+    public ThrottlingFault createThrottlingFault() {
+        return new ThrottlingFault();
     }
 
     /**
@@ -143,6 +207,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ClientServiceFault }
+     * 
+     */
+    public ClientServiceFault createClientServiceFault() {
+        return new ClientServiceFault();
+    }
+
+    /**
      * Create an instance of {@link GetClientsByCountryAndSex }
      * 
      */
@@ -176,12 +248,66 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CreateNewClient }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server/", name = "createNewClient")
+    public JAXBElement<CreateNewClient> createCreateNewClient(CreateNewClient value) {
+        return new JAXBElement<CreateNewClient>(_CreateNewClient_QNAME, CreateNewClient.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteClient }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server/", name = "deleteClient")
+    public JAXBElement<DeleteClient> createDeleteClient(DeleteClient value) {
+        return new JAXBElement<DeleteClient>(_DeleteClient_QNAME, DeleteClient.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetClientsByContact }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://server/", name = "getClientsByContact")
     public JAXBElement<GetClientsByContact> createGetClientsByContact(GetClientsByContact value) {
         return new JAXBElement<GetClientsByContact>(_GetClientsByContact_QNAME, GetClientsByContact.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateClient }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server/", name = "updateClient")
+    public JAXBElement<UpdateClient> createUpdateClient(UpdateClient value) {
+        return new JAXBElement<UpdateClient>(_UpdateClient_QNAME, UpdateClient.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateClientResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server/", name = "updateClientResponse")
+    public JAXBElement<UpdateClientResponse> createUpdateClientResponse(UpdateClientResponse value) {
+        return new JAXBElement<UpdateClientResponse>(_UpdateClientResponse_QNAME, UpdateClientResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteClientResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server/", name = "deleteClientResponse")
+    public JAXBElement<DeleteClientResponse> createDeleteClientResponse(DeleteClientResponse value) {
+        return new JAXBElement<DeleteClientResponse>(_DeleteClientResponse_QNAME, DeleteClientResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ClientServiceFault }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server/", name = "IllegalArgumentException")
+    public JAXBElement<ClientServiceFault> createIllegalArgumentException(ClientServiceFault value) {
+        return new JAXBElement<ClientServiceFault>(_IllegalArgumentException_QNAME, ClientServiceFault.class, null, value);
     }
 
     /**
@@ -227,6 +353,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://server/", name = "getClientsByCity")
     public JAXBElement<GetClientsByCity> createGetClientsByCity(GetClientsByCity value) {
         return new JAXBElement<GetClientsByCity>(_GetClientsByCity_QNAME, GetClientsByCity.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ThrottlingFault }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server/", name = "ThrottlingException")
+    public JAXBElement<ThrottlingFault> createThrottlingException(ThrottlingFault value) {
+        return new JAXBElement<ThrottlingFault>(_ThrottlingException_QNAME, ThrottlingFault.class, null, value);
     }
 
     /**
@@ -290,6 +425,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://server/", name = "getClientsByNameAndCity")
     public JAXBElement<GetClientsByNameAndCity> createGetClientsByNameAndCity(GetClientsByNameAndCity value) {
         return new JAXBElement<GetClientsByNameAndCity>(_GetClientsByNameAndCity_QNAME, GetClientsByNameAndCity.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CreateNewClientResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server/", name = "createNewClientResponse")
+    public JAXBElement<CreateNewClientResponse> createCreateNewClientResponse(CreateNewClientResponse value) {
+        return new JAXBElement<CreateNewClientResponse>(_CreateNewClientResponse_QNAME, CreateNewClientResponse.class, null, value);
     }
 
 }
